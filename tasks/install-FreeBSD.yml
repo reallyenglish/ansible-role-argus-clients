@@ -10,3 +10,4 @@
   file:
     src: /usr/local/lib/sasl2
     dest: /usr/lib/sasl2
+    state: link
