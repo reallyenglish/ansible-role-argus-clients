@@ -4,3 +4,9 @@
   pkgng:
     name: "{{ argus_clients_package }}"
     state: present
+
+- name: Create a symlink to correct sasl2 plugins directory
+  # https://github.com/reallyenglish/ansible-role-argus-clients/issues/2
+  file:
+    src: /usr/local/lib/sasl2
+    dest: /usr/lib/sasl2
