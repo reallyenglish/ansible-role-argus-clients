@@ -1,0 +1,6 @@
+---
+
+- name: Restart argus-clients
+  service:
+    name: argus-clients
+    state: restarted

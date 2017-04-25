@@ -1,0 +1,2 @@
+__argus-clients_db_dir: /var/db/argus-clients
+__argus-clients_conf_dir: /usr/local/etc/argus-clients

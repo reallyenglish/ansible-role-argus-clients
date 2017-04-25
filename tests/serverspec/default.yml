@@ -1,0 +1,5 @@
+- hosts: localhost
+  roles:
+    - ansible-role-argus-clients
+  vars:
+    argus-clients_config: ""

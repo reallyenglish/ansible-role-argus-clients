@@ -1,0 +1,6 @@
+---
+
+- name: Install argus-clients
+  pkgng:
+    name: argus-clients
+    state: present
