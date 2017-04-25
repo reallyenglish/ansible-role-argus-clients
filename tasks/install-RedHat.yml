@@ -1,6 +1,6 @@
 ---
 
 - name: Install argus-clients
-  pkgng:
+  yum:
     name: "{{ argus_clients_package }}"
     state: present

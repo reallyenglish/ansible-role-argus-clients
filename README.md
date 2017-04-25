@@ -1,6 +1,11 @@
 # ansible-role-argus-clients
 
-A brief description of the role goes here.
+Installs `argus-clients`.
+
+## Missing Ubuntu support
+
+`deb` packages for our targeted Ubuntu releases are version 2.x, which has been
+officially discouraged.
 
 # Requirements
 
@@ -8,9 +13,28 @@ None
 
 # Role Variables
 
-| variable | description | default |
+| Variable | Description | Default |
 |----------|-------------|---------|
+| `argus_clients_package` | package name of `argus-clients` | `{{ __argus_clients_package }}` |
 
+
+## FreeBSD
+
+| Variable | Default |
+|----------|---------|
+| `__argus_clients_package` | `net-mgmt/argus3-clients` |
+
+## OpenBSD
+
+| Variable | Default |
+|----------|---------|
+| `__argus_clients_package` | `argus-clients` |
+
+## RedHat
+
+| Variable | Default |
+|----------|---------|
+| `__argus_clients_package` | `argus-clients` |
 
 # Dependencies
 
@@ -19,6 +43,10 @@ None
 # Example Playbook
 
 ```yaml
+- hosts: localhost
+  roles:
+    - ansible-role-argus-clients
+  vars:
 ```
 
 # License

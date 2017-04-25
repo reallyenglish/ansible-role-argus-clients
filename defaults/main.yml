@@ -1,8 +1,1 @@
-argus-clients_user: argus-clients
-argus-clients_group: argus-clients
-argus-clients_log_dir: /var/log/argus-clients
-argus-clients_db_dir: "{{ __argus-clients_db_dir }}"
-argus-clients_service: argus-clients
-argus-clients_conf_dir: "{{ __argus-clients_conf_dir }}"
-argus-clients_conf_file: "{{ __argus-clients_conf_dir }}/argus-clients.conf"
-argus-clients_flags: ""
+argus_clients_package: "{{ __argus_clients_package }}"

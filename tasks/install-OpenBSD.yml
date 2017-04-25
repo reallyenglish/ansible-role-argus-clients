@@ -1,6 +1,6 @@
 ---
 
 - name: Install argus-clients
-  pkgng:
+  openbsd_pkg:
     name: "{{ argus_clients_package }}"
     state: present
