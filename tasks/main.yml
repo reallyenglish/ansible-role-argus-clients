@@ -4,3 +4,18 @@
 - include_vars: "{{ ansible_os_family }}.yml"
 
 - include: "install-{{ ansible_os_family }}.yml"
+
+- name: Create ra.conf
+  template:
+    src: ra.conf.j2
+    dest: "{{ argus_clients_config_dir }}/ra.conf"
+
+- name: Create a symlink to ${LOCALBASE}/ra.conf from /etc
+  # workaround the issue #5, where argus-clients does not respect LOCALBASE
+  # https://github.com/reallyenglish/ansible-role-argus-clients/issues/5
+  file:
+    src: /usr/local/etc/ra.conf
+    dest: /etc/ra.conf
+    state: link
+  when:
+    - ansible_os_family == 'FreeBSD'

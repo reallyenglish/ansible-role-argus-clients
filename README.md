@@ -16,7 +16,19 @@ None
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `argus_clients_package` | package name of `argus-clients` | `{{ __argus_clients_package }}` |
+| `argus_clients_config_dir` | the directory where `ra.conf` resides | `{{ __argus_clients_config_dir }}` |
+| `argus_clients_config` | a dict of `ra.conf` (see below) | `{}` |
 
+## `argus_clients_config`
+
+The variable is a dict, its key is variables name of `ra.conf`, and their values. Example:
+
+
+```yaml
+argus_clients_config:
+    RA_MIN_SSF: 40
+    RA_MAX_SSF: 128
+```
 
 ## FreeBSD
 
@@ -45,8 +57,19 @@ None
 ```yaml
 - hosts: localhost
   roles:
+    - reallyenglish.redhat-repo
     - ansible-role-argus-clients
   vars:
+    redhat_repo_extra_packages:
+      - epel-release
+    redhat_repo:
+      epel:
+        mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-{{ ansible_distribution_major_version }}&arch={{ ansible_architecture }}"
+        gpgcheck: yes
+        enabled: yes
+    argus_clients_config:
+      RA_MIN_SSF: 40
+      RA_MAX_SSF: 128
 ```
 
 # License

@@ -1,1 +1,4 @@
 argus_clients_package: "{{ __argus_clients_package }}"
+argus_clients_config_dir: "{{ __argus_clients_config_dir }}"
+
+argus_clients_config: {}

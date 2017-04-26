@@ -10,3 +10,6 @@
         mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-{{ ansible_distribution_major_version }}&arch={{ ansible_architecture }}"
         gpgcheck: yes
         enabled: yes
+    argus_clients_config:
+      RA_MIN_SSF: 40
+      RA_MAX_SSF: 128

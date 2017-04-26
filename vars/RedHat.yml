@@ -1,1 +1,2 @@
 __argus_clients_package: argus-clients
+__argus_clients_config_dir: /etc

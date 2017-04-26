@@ -1,0 +1,4 @@
+# Managed by ansible
+{% for k, v in argus_clients_config | dictsort() %}
+{{ k }}={{ v }}
+{% endfor %}
