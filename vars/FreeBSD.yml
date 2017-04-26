@@ -1,1 +1,2 @@
 __argus_clients_package: net-mgmt/argus3-clients
+__argus_clients_config_dir: /usr/local/etc
