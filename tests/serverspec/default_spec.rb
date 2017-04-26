@@ -27,6 +27,10 @@ when "freebsd"
     it { should be_symlink }
     it { should be_linked_to "/usr/local/lib/sasl2" }
   end
+  describe file("/etc/ra.conf") do
+    it { should be_symlink }
+    it { should be_linked_to "/usr/local/etc/ra.conf" }
+  end
 end
 
 describe command("ra -h") do
