@@ -19,7 +19,7 @@ end
 
 describe package(package) do
   it { should be_installed }
-end 
+end
 
 case os[:family]
 when "freebsd"
@@ -40,7 +40,7 @@ describe command("ra -h") do
   its(:stderr) { should match(/^$/) }
 end
 
-describe file("#{ config_dir }/ra.conf") do
+describe file("#{config_dir}/ra.conf") do
   it { should be_file }
   it { should be_owned_by default_user }
   it { should be_grouped_into default_group }
